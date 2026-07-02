@@ -1,7 +1,5 @@
-import java.io.File;
-import java.io.StreamTokenizer;
-import java.util.Scanner;
-import java.util.Set;
+import java.io.*;
+import java.util.*;
 
 public class Exercise21_03 {
     public static void main(String[] args) throws Exception {
