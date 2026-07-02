@@ -1,3 +1,2 @@
-public Hub {
-    
+public class Exercise21_3 {
 }
