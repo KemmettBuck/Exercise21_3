@@ -47,6 +47,15 @@ public class Exercise21_03 {
         Set<String> keywordSet =
             new HashSet<>(Arrays.asList(keywordString));
         int count = 0;
+
+        // read file into string
+        Scanner input = new Scanner(file);
+        StringBuilder sb = new StringBuilder();
+        while (input.hasNextLine()) {
+            sb.append(input.nextLine()).append("\n");
+        }
+        input.close();
+
     }
     
 }
