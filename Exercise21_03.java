@@ -56,6 +56,21 @@ public class Exercise21_03 {
         }
         input.close();
 
+        String code = sb.toString();
+
+        // remove string literals to avoid counting keywords
+        code = code.replaceAll("\"[^\"]*\"", "\"\"");
+
+        // remove character literals
+        code = code.replaceAll("'[^']*'", "''");
+
+        // remove line comments
+        code = code.replaceAll("//[^\n]*", "");
+
+        // remove line block comments
+        code = code.replaceAll("/\\*[^*]*\\*+(?:[^/*][^*]*\\*+)*/", "");
+
+        
     }
     
 }
