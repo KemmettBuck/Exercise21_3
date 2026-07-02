@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.StreamTokenizer;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -70,7 +71,17 @@ public class Exercise21_03 {
         // remove line block comments
         code = code.replaceAll("/\\*[^*]*\\*+(?:[^/*][^*]*\\*+)*/", "");
 
-        
+        // count keywords word by word
+        StreamTokenizer st = new StreamTokenizer(new StringReader(code));
+
+        while (st.nextToken() != StreamTokenizer.TT_EOF) {
+            if (st.ttype == StreamTokenizer.TT_WORD) {
+                if (keywordSet.contains(st.sval)) {
+                    count++;
+                }
+            }
+        }
+
+        return count;
     }
-    
 }
